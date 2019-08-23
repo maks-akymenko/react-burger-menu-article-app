@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { bool, func } from 'prop-types';
 import { StyledBurger } from './Burger.styled';
 
@@ -17,4 +17,4 @@ Burger.propTypes = {
   setOpen: func.isRequired,
 };
 
-export default Burger
+export default Burger;

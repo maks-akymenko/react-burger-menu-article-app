@@ -17,7 +17,8 @@ function App() {
         <GlobalStyles />
         <div>
           <h1>Hello. This is burger menu tutorial</h1>
-          <img src="https://media.giphy.com/media/xTiTnwj1LUAw0RAfiU/giphy.gif" alt="animated burger" />
+          <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
+          <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
         </div>
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />

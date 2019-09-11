@@ -15,11 +15,7 @@ export const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
 
-  &:focus {
-    outline: none;
-  }
-
-  div {
+  span {
     width: 2rem;
     height: 0.25rem;
     background: ${({ theme, open }) => open ? theme.primaryDark : theme.primaryLight};

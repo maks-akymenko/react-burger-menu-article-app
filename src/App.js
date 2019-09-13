@@ -4,6 +4,7 @@ import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
 import { Burger, Menu } from './components';
+import FocusLock from 'react-focus-lock';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,10 @@ function App() {
       <>
         <GlobalStyles />
         <div ref={node}>
-          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-          <Menu open={open} setOpen={setOpen} id={menuId} />
+          <FocusLock disabled={!open}>
+            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+            <Menu open={open} setOpen={setOpen} id={menuId} />
+          </FocusLock>
         </div>
         <div>
           <h1>Hello. This is burger menu tutorial</h1>

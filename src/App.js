@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { useOnClickOutside } from './hooks';
-import { GlobalStyles } from './global';
-import { theme } from './theme';
-import { Burger, Menu } from './components';
-import FocusLock from 'react-focus-lock';
+import React, { useState, useRef } from "react";
+import { ThemeProvider } from "styled-components";
+import { useOnClickOutside, useOnClick } from "./hooks";
+import { GlobalStyles } from "./global";
+import { theme } from "./theme";
+import { Burger, Menu } from "./components";
+import FocusLock from "react-focus-lock";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -12,6 +12,7 @@ function App() {
   const menuId = "main-menu";
 
   useOnClickOutside(node, () => setOpen(false));
+  useOnClick(() => setOpen(false));
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,10 +26,15 @@ function App() {
         </div>
         <div>
           <h1>Hello. This is burger menu tutorial</h1>
-          <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
-          <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
+          <img
+            src="https://image.flaticon.com/icons/svg/2016/2016012.svg"
+            alt="burger icon"
+          />
+          <small>
+            Icon made by <a href="https://www.freepik.com/home">Freepik</a> from{" "}
+            <a href="https://www.flaticon.com">www.flaticon.com</a>
+          </small>
         </div>
-        
       </>
     </ThemeProvider>
   );
